@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Syne:wght@400;500;600;700&display=swap');
+
+/* Global Styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+.scroll-up-btn{
+  position: fixed;
+  height: 45px;
+  width: 40px;
+  background: gold;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: black;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.max-width{
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+.about,.services,.skills,.projects{
+  font-family: 'Poppins', sans-serif;
+}
+
+.about .about-content,
+.services .services-content,
+.skills .skills-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+section{
+  padding: 100px 0;
+}
+section .title{
+  position: relative;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  font-family: 'Syne',sans-serif;
+}
+section .title::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100px;
+  height: 3px;
+  background: black;
+  transform: translateX(-50%);
+}
+.services,.projects{
+  color: white;
+  background: black;
+}
+.services .title::before,
+.projects .title::before{
+  background: white;
+}
+.services .title,
+.projects .title{
+  margin-bottom: 30px;
+}
+/* Navbar Styling */
+.navbar{
+  position: fixed;
+  width: 100%;
+  padding: 15px 0;
+  font-family: 'Syne', 'sans-serif';
+  z-index: 999;
+}
+
+.navbar.sticky{
+  padding: 15px 0;
+  background: gold;
+}
+
+.navbar .max-width{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a{
+  color: white;
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.navbar.sticky .logo a{
+  color: black;
+}
+
+.navbar .logo a span{
+  color: gold;
+}
+
+.navbar.sticky .logo a span{
+  color: white;
+}
+
+.navbar .menu li{
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a{
+  display: block;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.navbar.sticky .menu li a{
+  color: black;
+  /* color: aliceblue; */
+}
+
+.navbar .menu li a:hover{
+  color: gold;
+}
+
+.navbar.sticky .menu li a:hover{
+  color: white;
+}
+
+/* menu btn styling */
+.menu-btn{
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.navbar.sticky .menu-btn{
+  color: black;
+}
+/* home styling */
+.home{
+  display: flex;
+  background: url("../images/banner.png") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  color: white;
+  min-height: 500px;
+  font-family: 'Syne', 'sans-serif';
+}
+
+.home .max-width{
+  margin: auto 0 auto 40px;
+}
+
+.home .home-content .text-1{
+  font-size: 25px;
+}
+.home .home-content .text-2{
+  font-size: 75px;
+  font-weight: 600;
+}
+.home .home-content .text-3{
+  font-size: 40px;
+  margin: 5px 0;
+}
+.home .home-content .text-3 span{
+  color: gold;
+  font-weight: 600;
+}
+
+/* About Styling */
+.about .about-content .left{
+  width: 45%;
+}
+.about .about-content .left img{
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+.about .about-content .right{
+  width: 55%;
+}
+.about .about-content .right .text{
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.about .about-content .right .text span{
+  font-weight: 600;
+  font-size: 30px;
+  color: gold;
+}
+.about .about-content .right p{
+  text-align: justify;
+}
+.about .about-content .right a{
+  display: inline-block;
+  background: gold;
+  color: black;
+  font-size: 13px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.about .about-content .right a:hover{
+  color: black;
+  background: none;
+}
+/* services styling */
+.services .services-content .card{
+  background: #222;
+  width: calc(33% - 20px);
+  text-align: center;
+  border-radius: 5%;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+.services .services-content .card:hover{
+  background: gold;
+}
+.services .services-content .card .box{
+  transition: all 0.3s ease;
+}
+.services .services-content .card:hover .box{
+  transform: scale(1.05);
+}
+.services .services-content .card i{
+  font-size: 2em;
+  color: gold;
+}
+.services .services-content .card:hover i{
+  color: black;
+}
+.services .services-content .card .text{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px 20px 10px;
+}
+.services .services-content .card:hover .text{
+  color: black;
+}
+.services .services-content .card p{
+  font-size: 1em;
+}
+.services .services-content .card:hover p{
+  color: black;
+}
+/* Skills Styling */
+.skills .skills-content .column{
+  width: calc(50% - 30px);
+}
+/* left side */
+.skills .skills-content .left .bars{
+  margin-bottom: 15px;
+}
+.skills .skills-content .left .info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills .skills-content .left span{
+  font-weight: 500;
+  font-size: 18px;
+}
+.skills .skills-content .left .line{
+  height: 5px;
+  width: 100%;
+  background: lightslategray;
+  position: relative;
+}
+.skills .skills-content .left .line::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: gold;
+}
+.skills-content .left .html::before{
+  width: 90%;
+}
+.skills-content .left .css::before{
+  width: 85%;
+}
+.skills-content .left .javascript::before{
+  width: 75%;
+}
+.skills-content .left .php::before{
+  width: 70%;
+}
+.skills-content .left .mysql::before{
+  width: 70%;
+}
+/* right side */
+.skills .skills-content .right .bars{
+  margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills .skills-content .right span{
+  font-weight: 500;
+  font-size: 18px;
+}
+.skills .skills-content .right .line{
+  height: 5px;
+  width: 100%;
+  background: lightslategray;
+  position: relative;
+}
+.skills .skills-content .right .line::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: gold;
+}
+.skills-content .right .html::before{
+  width: 90%;
+}
+.skills-content .right .css::before{
+  width: 85%;
+}
+.skills-content .right .javascript::before{
+  width: 75%;
+}
+.skills-content .right .php::before{
+  width: 70%;
+}
+.skills-content .right .mysql::before{
+  width: 70%;
+}
+
+/* Projects Styling */
+.projects .carousel .card{
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.projects .carousel .card:hover{
+  background: gold;
+  color: black;
+}
+.projects .carousel .card .box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.projects .carousel .card:hover .box{
+  transform: scale(1.05);
+}
+.projects .carousel .card .text{
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 10px 0 10px 0;
+}
+.projects .carousel .card:hover .text{
+  color: black;
+}
+.projects .carousel .card img{
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 5%;
+  border: 5px solid gold;  
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.projects .carousel .card:hover img{
+  border-color: black;
+}
+.owl-dots{
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot{
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none!important;
+  border-radius: 50%;
+  border: 2px solid gold!important;
+  transition: all 0.3s ease;
+}
+.owl-dot.active{
+  width: 35px;
+  border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+  background: gold!important;
+}
+/* footer styling */
+footer{
+  background: black;
+  padding: 20px 23px;
+  color: white;
+  text-align: center;
+}
+footer span a{
+  color: gold;
+  font-weight: 500;
+  text-decoration: none;
+}
+footer span a:hover{
+  text-decoration: underline;
+}
+.gold-color{
+  color: gold;
+}
+
+
+
+
+
+
+/* ========================== Media Query ====================== */
+/* responsive styling */
+@media (max-width: 990px){
+  .menu-btn{
+    display: block;
+    z-index: 999;
+  }
+  .menu-btn i.active:before{
+    content: "\f00d";
+  }
+  .navbar .menu{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    text-align: center;
+    padding-top: 50px;
+    background: black;
+    transition: all 0.3s ease;
+  }
+  .navbar .menu.active{
+    left: 0;
+  }
+  .navbar .menu li{
+    display: block;
+  }
+  .navbar .menu li a{
+    display: inline-block;
+    margin: 20px 0;
+    background-color: red;
+  }
+  .services .services-content .card{
+    width: calc(50% - 30px);
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width:698px){
+  .home .home-content .text-1{
+    font-size: 2em;
+    margin-left: -70px;
+  }
+  .home .home-content .text-2{
+    font-size: 4em;
+    margin-left: -70px;
+  }
+  .home .home-content .text-3{
+    font-size: 2em;
+    margin-left: -70px; 
+  } 
+  .services .services-content .card,
+  .skills .skills-content .column{
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px){
+  .home .home-content .text-1{
+    font-size: 1.5em;
+    margin-left: -70px;
+  }
+  .home .home-content .text-2{
+    font-size: 2.5em;
+    margin-left: -70px;
+  }
+  .home .home-content .text-3{
+    font-size: 1.5em;
+    margin-left: -70px; 
+  }
+  
+  .navbar .logo a{
+    font-size: 2em;
+    margin-left: -37px;
+  }
+  .menu-btn{
+    margin-right: -50px;
+  }
+}
+
+@media (max-width: 1078px){
+  .about .about-content .left img{
+    height: 300px;
+    width: 300px;
+  }
+  .about .about-content .right{
+    width: 60%;
+  }
+  .about .about-content .left{
+    width: 35%;
+  }
+}
+
+@media (max-width: 948px){
+  .about .about-content .column{
+    width: 100%;
+  }
+  .about .about-content .left{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+  .about .about-content .right{
+    flex: 100%;
+  }
+}
+
+@media (max-width: 425px){
+  .about .about-content .left img{
+    height: 200px;
+    width: 200px;
+  }
+  .about .about-content .right .text{
+    font-size: 20px;
+  }
+  .about .about-content .right .text span{
+    font-size: 25px;
+  }
+  .about .about-content .right p{
+    text-align: justify;
+    font-size: 12px;
+  }
+  .about .about-content .right a{
+    display: inline-block;
+    background: gold;
+    color: black;
+    font-size: 10px;
+    padding: 9px 27px;
+  }
+  .services .services-content .card p{
+    font-size: 0.8em;
+  }
+  .skills .skills-content .left span{
+    font-size: 0.8em;
+  }
+  .skills .skills-content .right span{
+    font-size: 0.8em;
+  }
+  .projects .carousel .card .text{
+    font-size: 1em;
+  }
+  .projects .carousel .card{
+    font-size: 0.8em;
+  }
+}
