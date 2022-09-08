@@ -38,12 +38,11 @@ html{
   padding: 0 80px;
   margin: auto;
 }
-.about,.services,.skills,.projects{
+.about,.skills,.projects{
   font-family: 'Poppins', sans-serif;
 }
 
 .about .about-content,
-.services .services-content,
 .skills .skills-content{
   display: flex;
   flex-wrap: wrap;
@@ -72,15 +71,13 @@ section .title::before{
   background: black;
   transform: translateX(-50%);
 }
-.services,.projects{
+.projects{
   color: white;
   background: black;
 }
-.services .title::before,
 .projects .title::before{
   background: white;
 }
-.services .title,
 .projects .title{
   margin-bottom: 30px;
 }
@@ -233,48 +230,17 @@ section .title::before{
   color: black;
   background: none;
 }
-/* services styling */
-.services .services-content .card{
-  background: #222;
-  width: calc(33% - 20px);
-  text-align: center;
-  border-radius: 5%;
-  padding: 20px 25px;
-  cursor: pointer;
-}
-.services .services-content .card:hover{
-  background: gold;
-}
-.services .services-content .card .box{
-  transition: all 0.3s ease;
-}
-.services .services-content .card:hover .box{
-  transform: scale(1.05);
-}
-.services .services-content .card i{
-  font-size: 2em;
-  color: gold;
-}
-.services .services-content .card:hover i{
-  color: black;
-}
-.services .services-content .card .text{
-  font-size: 20px;
-  font-weight: 500;
-  margin: 10px 20px 10px;
-}
-.services .services-content .card:hover .text{
-  color: black;
-}
-.services .services-content .card p{
-  font-size: 1em;
-}
-.services .services-content .card:hover p{
-  color: black;
-}
 /* Skills Styling */
+.skills .skills-content{
+  align-items: flex-start;
+}
 .skills .skills-content .column{
   width: calc(50% - 30px);
+}
+.skills .skills-content .text-skills{
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 /* left side */
 .skills .skills-content .left .bars{
@@ -303,21 +269,32 @@ section .title::before{
   height: 100%;
   background: gold;
 }
-.skills-content .left .html::before{
+.skills-content .left .html::before,
+.skills-content .left .css::before,
+.skills-content .left .git::before,
+.skills-content .left .github::before{
   width: 90%;
 }
-.skills-content .left .css::before{
+.skills-content .left .webpack::before,
+.skills-content .left .react::before,
+.skills-content .left .vue::before,
+.skills-content .left .redux::before,
+.skills-content .left .vuex::before{
   width: 85%;
+}
+.skills-content .left .bootstrap::before,
+.skills-content .left .nodejs::before{
+  width: 80%;
 }
 .skills-content .left .javascript::before{
   width: 75%;
 }
-.skills-content .left .php::before{
+.skills-content .left .sass::before,
+.skills-content .left .tailwind::before{
   width: 70%;
 }
-.skills-content .left .mysql::before{
-  width: 70%;
-}
+
+
 /* right side */
 .skills .skills-content .right .bars{
   margin-bottom: 15px;
@@ -345,25 +322,31 @@ section .title::before{
   height: 100%;
   background: gold;
 }
-.skills-content .right .html::before{
+.skills-content .right .balsamiq::before,
+.skills-content .right .photoshop::before,
+.skills-content .right .acid::before{
   width: 90%;
 }
 .skills-content .right .css::before{
   width: 85%;
 }
-.skills-content .right .javascript::before{
+.skills-content .right .codeigniter::before,
+.skills-content .right .flutter::before{
   width: 75%;
 }
-.skills-content .right .php::before{
+.skills-content .right .php::before,
+.skills-content .right .dart::before,
+.skills-content .right .laravel::before{
   width: 70%;
 }
 .skills-content .right .mysql::before{
-  width: 70%;
+  width: 80%;
 }
 
 /* Projects Styling */
 .projects .carousel .card{
   background: #222;
+  height: 350px;
   border-radius: 6px;
   padding: 25px 35px;
   text-align: center;
@@ -386,6 +369,9 @@ section .title::before{
   font-size: 1.5em;
   font-weight: 500;
   margin: 10px 0 10px 0;
+}
+.projects .carousel .card p{
+  font-size: 1em;
 }
 .projects .carousel .card:hover .text{
   color: black;
@@ -479,10 +465,6 @@ footer span a:hover{
     margin: 20px 0;
     background-color: red;
   }
-  .services .services-content .card{
-    width: calc(50% - 30px);
-    margin-bottom: 30px;
-  }
 }
 
 @media (max-width:698px){
@@ -498,7 +480,6 @@ footer span a:hover{
     font-size: 2em;
     margin-left: -70px; 
   } 
-  .services .services-content .card,
   .skills .skills-content .column{
     width: 100%;
   }
@@ -576,9 +557,6 @@ footer span a:hover{
     font-size: 10px;
     padding: 9px 27px;
   }
-  .services .services-content .card p{
-    font-size: 0.8em;
-  }
   .skills .skills-content .left span{
     font-size: 0.8em;
   }
@@ -590,5 +568,21 @@ footer span a:hover{
   }
   .projects .carousel .card{
     font-size: 0.8em;
+    height: 320px;
+  }
+}
+@media (max-width: 1149px) {
+  .projects .carousel .card p{
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 853px) {
+  .projects .carousel .card p{
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 597px) {
+  .projects .carousel .card p{
+    font-size: 1.0em;
   }
 }
