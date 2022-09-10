@@ -134,8 +134,7 @@ section .title::before{
 }
 
 .navbar.sticky .menu li a{
-  /* color: black; */
-  color: white;
+  color: black;
 }
 
 .navbar .menu li a:hover{
@@ -439,6 +438,10 @@ footer span a:hover{
   .menu-btn{
     display: block;
     z-index: 999;
+  }
+  .navbar.sticky .menu li a{
+    /* color: black; */
+    color: white;
   }
   .menu-btn i.active:before{
     color: white;
