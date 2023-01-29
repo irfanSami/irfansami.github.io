@@ -274,14 +274,12 @@ section .title::before{
 .skills-content .left .github::before{
   width: 90%;
 }
-.skills-content .left .webpack::before,
-.skills-content .left .react::before,
-.skills-content .left .vue::before,
-.skills-content .left .redux::before,
-.skills-content .left .vuex::before{
+
+.skills-content .left .react::before{
   width: 85%;
 }
 .skills-content .left .bootstrap::before,
+.skills-content .left .webpack::before,
 .skills-content .left .nodejs::before{
   width: 80%;
 }
